@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Main Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Header -->
+        <div class="header-container">
+        </div>
+
+        <div class="enemy-container">
+            <div class="enemy-cell">
+                <img src="assets/imgs/accets/enemy_accent_bar.png">
+            </div>
+            <div class="enemy-cell">
+                <img id="enemy-icon" src="assets/imgs/icons/icon_unknown_dark.png">                
+            </div>
+            <div class="enemy-cell">
+                <img src="assets/imgs/accets/enemy_accent_bar.png">                
+            </div>
+        </div>
+
+        <div id="game-message-container">
+            <p>Choose Your Weapon</p>
+        </div>
+
+        <div id="weapon-choice-container">
+
+            <div id="w1" class="weapon-cell">
+                <img onclick="game_select_weapon(0)" src="assets/imgs/icons/icon_shield_color.png">
+            </div>
+            
+            <div class="arrow-cell">
+                    <img src="assets/imgs/accets/arrow_right.png">
+            </div>
+
+            <div id="w2" class="weapon-cell">
+                <img onclick="game_select_weapon(1)" src="assets/imgs/icons/icon_sword_color.png">
+            </div>
+            
+            <div class="arrow-cell">
+                    <img src="assets/imgs/accets/arrow_right.png">
+            </div>
+
+            <div id="w3" onclick="game_select_weapon(2)" class="weapon-cell">
+                <img src="assets/imgs/icons/icon_water_color.png">
+            </div>
+        </div>
+
+        <div class="arrow-back-accent">
+                <img src="assets/imgs/accets/arrow_back.png">
+        </div>
+
+
+        <div class="footer-push"></div>
+    </div>
+
+    <div class="footer">
+        
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/utilities.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/game.js"></script>
+</body>
+</html>
