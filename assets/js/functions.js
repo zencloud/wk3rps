@@ -10,16 +10,13 @@ const game_select_weapon = function(choice) {
     // Enemy Select
     gameData.enemyChoice = getRandomInt(3);
 
-
-    console.log("Player:", gameData.weaponLibrary[gameData.playerChoice]);
-    console.log("Enemy:", gameData.weaponLibrary[gameData.enemyChoice]);
-
-
+    // Compare the two choices to define winner
     let p = gameData.playerChoice;
     let e = gameData.enemyChoice;
 
-    // Player Ties
-    let result = ( (e-p) % 3);
+    // Subtract Player from Enemy and mod by 3 to get sliding window for results
+    let result = ( (e-p) % 3 );
+
     console.log(result);
 
     switch (result) {
@@ -34,6 +31,7 @@ const game_select_weapon = function(choice) {
         break;
 
         case 1:
+        case -2:
             console.log("Player Wins");
         break;
     }
