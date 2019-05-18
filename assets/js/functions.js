@@ -9,6 +9,16 @@ const game_update_message_display = function(message) {
 // --- Player has selected weapon (CORE OPERATION)
 const game_select_weapon = function(choice) {
     
+    
+    
+    if (gameData.inputAllowed === false) {
+        return null;
+    }
+
+    if (gameData.inputAllowed === true) {
+        gameData.inputAllowed = false;
+    }
+
     // Take arg and assign as player choice
     gameData.playerChoice = choice;
 
@@ -16,8 +26,22 @@ const game_select_weapon = function(choice) {
     gameData.enemyChoice = getRandomInt(3);
 
     // Set Enemy Icon
-    let iconHTML = document.getElementById("enemy-icon");
+    let iconHTML = document.getElementsByClassName("icon-back")[0];
     iconHTML.src = `assets/imgs/icons/${gameData.weaponIconEnemy[gameData.enemyChoice]}`;
+
+    // Trigger Flip Animation
+    let iconCell = document.getElementsByClassName("flip-animation")[0];
+    iconCell.classList.add("flip-animation");
+    iconCell.style.transform = "rotateY(180deg)";
+
+    // Unset animation after delay to allow restart of animation later
+    setTimeout(function() {
+        iconCell.style.transform = "rotateY(0deg)";
+    }, 2000);
+
+    setTimeout(function() {
+        gameData.inputAllowed = true;
+    }, 2500);
 
     // Compare the two choices to define winner
     let p = gameData.playerChoice;
@@ -52,5 +76,5 @@ const game_select_weapon = function(choice) {
 
     setTimeout(function() {
         game_update_message_display("Choose a weapon.");
-    }, 1050);
+    }, 2000);
 }

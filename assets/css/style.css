@@ -38,6 +38,7 @@ body, html {
 .enemy-container 
 .enemy-cell {
     width: 150px;
+    position: relative;
 }
 
 .enemy-container
@@ -82,4 +83,34 @@ body, html {
 
 .footer {
     background-color: #282828;
+}
+
+/* Flip Setup */
+.enemy-cell {
+    perspective: 1000px;
+}
+
+/* .enemy-cell:hover {
+    transform: rotateY(180deg);
+} */
+
+.flip-animation {
+    transition: 0.6s;
+	transform-style: preserve-3d;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: -70px;
+	left: 0;
+}
+
+.front {
+    z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
 }

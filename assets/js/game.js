@@ -11,5 +11,8 @@ gameData = {
     playerChoice: null,
 
     // Enemy
-    enemyChoice: null
+    enemyChoice: null,
+
+    // Input 
+    inputAllowed: true
 }
